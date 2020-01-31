@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+  -moz-user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #000000;
+
+}
+
+.Home-Page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+  }
+
+  .main {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+  }
+
+  .footer {
+    width: 100%;
+    height: 40px;
+    background-color: #202020;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+
+    .iconfont {
+      font-size: 24px;
+    }
+  }
+}
+
+//Menu-Page
+.Menu-Page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    height: 45px;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    .add {
+      color: #378eb3;
+      font-size: 18px;
+    }
+
+    .done {
+      font-size: 18px;
+      color: #378eb3;
+    }
+  }
+}
+
+//Search-Page
+.Search-Page {
+  width: 100%;
+  height: 100%;
+
+  .header {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    background-color: #202020;
+
+    .title {
+      height: 25px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 25px;
+    }
+
+    .search {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+
+      .icon-sousuo {
+        font-size: 25px;
+      }
+
+      input {
+        flex: 1;
+        height: 70%;
+        background-color: #424242;
+        border: none;
+        border-radius: 9px;
+        margin-left: 6px;
+        margin-right: 6px;
+        padding: 0 10px;
+        outline: none;
+      }
+
+      .cancel {
+        display: flex;
+
+        span:nth-child(1) {
+          margin-right: 5px;
+          width: 18px;
+          height: 18px;
+          background-color: #fff;
+          line-height: 17px;
+          text-align: center;
+          color: #000;
+          border-radius: 50%;
+        }
+
+        span:nth-child(2) {
+          color: #378eb3;
+        }
+      }
+    }
+  }
+}
