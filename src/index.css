@@ -1,13 +1,144 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  color: #fff;
+  -moz-user-select: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #000000;
+}
+
+.Home-Page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Home-Page .header {
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+}
+
+.Home-Page .main {
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+}
+
+.Home-Page .footer {
+  width: 100%;
+  height: 40px;
+  background-color: #202020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.Home-Page .footer .iconfont {
+  font-size: 24px;
+}
+
+.Menu-Page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Menu-Page .header {
+  width: 100%;
+  height: 45px;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.Menu-Page .header .add {
+  color: #378eb3;
+  font-size: 18px;
+}
+
+.Menu-Page .header .done {
+  font-size: 18px;
+  color: #378eb3;
+}
+
+.Search-Page {
+  width: 100%;
+  height: 100%;
+}
+
+.Search-Page .header {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+}
+
+.Search-Page .header .title {
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.Search-Page .header .search {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.Search-Page .header .search .icon-sousuo {
+  font-size: 25px;
+}
+
+.Search-Page .header .search input {
+  flex: 1;
+  height: 70%;
+  background-color: #424242;
+  border: none;
+  border-radius: 9px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.Search-Page .header .search .cancel {
+  display: flex;
+}
+
+.Search-Page .header .search .cancel span:nth-child(1) {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  line-height: 17px;
+  text-align: center;
+  color: #000;
+  border-radius: 50%;
+}
+
+.Search-Page .header .search .cancel span:nth-child(2) {
+  color: #378eb3;
 }
