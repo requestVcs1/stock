@@ -4,11 +4,15 @@ import routerConfig from './routerConfig';
 import RouterView from './routerView';
 import '../iconfont/iconfont1/iconfont.css';
 import '../iconfont/iconfont2/iconfont.css';
+import { Provider } from 'react-redux';
+import stroe from '../store/';
 function RouterMain() {
     return (
-        <Router>
-            <RouterView routers={routerConfig} />
-        </Router>
+        <Provider store={stroe}>
+            <Router>
+                <RouterView routers={routerConfig} />
+            </Router>
+        </Provider>
     );
 }
 export default RouterMain;

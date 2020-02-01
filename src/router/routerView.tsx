@@ -10,7 +10,6 @@ class RouterView extends Component<prop> {
             <Switch>
                 <Redirect exact from="/" to="/home" />
                 {routers.map((item: any, index: number) => {
-                    console.log(item);
                     return (
                         <Route
                             key={index}
