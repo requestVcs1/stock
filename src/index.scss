@@ -10,6 +10,8 @@
   .container {
     padding: 10px;
 
+
+
     .box {
       padding: 15px 60px;
       border-bottom: 1px solid #868686;
@@ -79,6 +81,64 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  .Panel-Com {
+    width: 100%;
+    height: 220px;
+    background-color: #202020;
+    transition: all 1s;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+
+    &.down {
+      bottom: -300px;
+    }
+
+    &.up {
+      bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      width: 200%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      div:nth-child(1) {
+        flex: 1;
+
+        .name {
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          border-bottom: 1px solid #666666;
+        }
+
+        .open,
+        .high,
+        .low,
+        .vol,
+        .buy {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 35px;
+          width: 100%;
+          height: 35px;
+          text-align: center;
+          line-height: 30px;
+          border-bottom: 1px solid #444444;
+        }
+      }
+
+      div:nth-child(2) {
+        flex: 1;
+      }
+    }
+  }
 
   .header {
     width: 100%;
@@ -94,6 +154,10 @@ body {
     .container {
       padding: 10px;
 
+      .box:nth-last-child(1) {
+        margin-bottom: 220px;
+      }
+
       .box {
         padding: 15px 10px;
         border-bottom: 1px solid #868686;
@@ -101,6 +165,10 @@ body {
         font-size: 20px;
         display: flex;
         justify-content: space-between;
+
+        &.active {
+          background-color: #202020;
+        }
 
         .left {
           margin-right: 10px;
@@ -145,6 +213,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  z-index: 3;
+
 
   .iconfont {
     font-size: 24px;

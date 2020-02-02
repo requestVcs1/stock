@@ -6,6 +6,7 @@ interface action {
 const initState: any = {
     allStock: [],
     myStock: [],
+    selectData: null,
 };
 const reducer = (state: any, action: action) => {
     const newState = JSON.parse(JSON.stringify(state));
@@ -16,6 +17,9 @@ const reducer = (state: any, action: action) => {
         case 'ADD_MY_STOCK':
             newState.myStock = action.payload;
             localStorage.setItem('myStock', JSON.stringify(action.payload));
+            return newState;
+        case 'SET_SELECT_DATA':
+            newState.selectData = action.payload;
             return newState;
         default:
             return newState;

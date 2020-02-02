@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Panel from '../../components/panel';
 interface prop extends RouteComponentProps {
     myStock: Array<any>;
     setMyStock: Function;
+    setSelectData: Function;
+    selectData: any;
 }
 class Home extends Component<prop> {
+    state = {
+        flag: false,
+        active: null,
+        myStock1: [],
+    };
     skipMenu() {
         this.props.history.push('/menu');
     }
+    showInfo(item: any, index: number) {
+        this.props.setSelectData(item);
+        this.setState({
+            flag: true,
+            active: index,
+        });
+    }
     render() {
-        const { myStock } = this.props;
+        const { myStock, selectData } = this.props;
+        const { flag, active, myStock1 } = this.state;
         return (
             <div className="Home-Page">
                 <header className="header"></header>
                 <main className="main">
                     <div className="container">
-                        {myStock.map((item: any) => {
+                        {myStock.map((item: any, index: number) => {
                             return (
-                                <div key={item.symbol} className="box">
+                                <div
+                                    onClick={() => this.showInfo(item, index)}
+                                    key={item.symbol}
+                                    className={active === index ? 'box active' : 'box'}
+                                >
                                     <div className="left">{item.name}</div>
                                     <div className="right">
                                         <span></span>
@@ -31,6 +51,7 @@ class Home extends Component<prop> {
                         })}
                     </div>
                 </main>
+                <Panel myStock1={myStock1} selectData={selectData} flag={flag} />
                 <footer className="footer">
                     <span>YaHoo!</span>
                     <span onClick={() => this.skipMenu()} className="iconfont icon-caidan"></span>
@@ -42,18 +63,25 @@ class Home extends Component<prop> {
         const myStock = localStorage.getItem('myStock');
         if (myStock) {
             this.props.setMyStock(JSON.parse(myStock));
+            this.setState({
+                myStock1: myStock,
+            });
         }
     }
 }
 const MapStateToProps = (state: any) => {
     return {
         myStock: state.myStock,
+        selectData: state.selectData,
     };
 };
 const MapDispatchToProps = (dispatch: Function) => {
     return {
         setMyStock(data: any) {
             dispatch({ type: 'ADD_MY_STOCK', payload: data });
+        },
+        setSelectData(data: any) {
+            dispatch({ type: 'SET_SELECT_DATA', payload: data });
         },
     };
 };
